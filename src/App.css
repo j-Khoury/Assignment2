@@ -1,0 +1,57 @@
+.task-list {
+  margin-bottom: 30px;
+  padding: 30px
+}
+
+.task-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-list input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.task-list button {
+  padding: 5px 10px;
+  background-color: #ff5757;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-list button:hover {
+  background-color: #ff0000;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top-color: #ff5757;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
