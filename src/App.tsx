@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import TaskList from './components/assignment/assignment.tsx';
-import  styles from './App.css'
 import styled, { keyframes } from 'styled-components';
 
 interface Task {
@@ -87,7 +86,8 @@ const Spinner = styled.div`
 
 
   return (
-    <div className="container-lg py-4 my-4" style={{ width: '600px' }}>
+    <div className='d-flex justify-content-center' style={{width: '100%'}}>
+      <div className="container-lg py-4 my-4" style={{ width: '600px' }}>
       
       {/* Conditionally render the spinner */}
       {showSpinner && <Spinner />}
@@ -125,6 +125,8 @@ const Spinner = styled.div`
           onTaskDeletion={(index) => handleTaskDeletion(index, 'completed')}
         />
       </div>
+    </div>  
     </div>
+    
   );
 }

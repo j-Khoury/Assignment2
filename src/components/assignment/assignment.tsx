@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
-import  styles from '../../App.css'
+import { FC } from 'react';
+import '../../App.css'
+import { TaskListContainer, TaskListUl, TaskListItem, TaskListButton} from '../../assets/style.jsx';
 
 interface TaskListProps {
   title: string;
@@ -19,15 +20,15 @@ const TaskList: FC<TaskListProps> = ({
   onTaskDeletion,
 }) => {
   return (
-    <div className={styles.taskList} >
+    <TaskListContainer >
       <h2 className='mb-3'>{title}</h2>
 
       {tasks.length === 0 ? (
         <p>{message}</p>
       ) : (
-        <ul className='card p-2'>
+        <TaskListUl className='card p-2'>
           {tasks.map((task, index) => (
-            <li key={index}>
+            <TaskListItem key={index}>
               <span className='d-flex flex-row'>
                 <span className='d-flex align-items-center flex-row'>
                   <input
@@ -43,12 +44,12 @@ const TaskList: FC<TaskListProps> = ({
                 </span>
                 <span>{task.name}</span>
               </span>
-              <button onClick={() => onTaskDeletion(index)}>Delete</button>
-            </li>
+              <TaskListButton onClick={() => onTaskDeletion(index)}>Delete</TaskListButton>
+            </TaskListItem>
           ))}
-        </ul>
+        </TaskListUl>
       )}
-    </div>
+    </TaskListContainer>
   );
 };
 
